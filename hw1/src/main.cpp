@@ -17,8 +17,10 @@ public:
         std::string input;
         std::getline(std::cin, input, endChar);
         input = input.substr(0, maximumCount);
-    
-        alphabetCount = std::ranges::count_if(input | std::ranges::views::filter(std::isalpha));
+
+        alphabetCount = std::ranges::count_if(
+            input | std::ranges::views::filter(std::isalpha)
+        );
     }
 
 
