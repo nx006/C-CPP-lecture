@@ -16,11 +16,13 @@ public:
     void getString() {
         std::string input;
         std::getline(std::cin, input, endChar);
-        input = input.substr(0, maximumCount);
+        this->input = input.substr(0, maximumCount);
 
-        alphabetCount = std::ranges::count_if(
-            input | std::ranges::views::filter(std::isalpha)
-        );
+        for (const auto c : input) {
+            if (std::isalpha(c)) {
+                alphabetCount++;
+            }
+        }
     }
 
 
