@@ -7,6 +7,7 @@ class StringManager
 {
 public:
     StringManager() = default;
+    ~StringManager() = default;
 
     void printMenu() const {
         std::cout << "영문 텍스트를 입력하세요. 히스토그램을 그립니다." << std::endl;
@@ -28,8 +29,9 @@ public:
 
     auto createHistogram() {
         for (const auto c : input) {
-            if (c == ' ') continue;
-            histogram[c]++;
+            if (std::isalpha(c)) {
+                histogram[c]++;
+            }
         }
     }
 
@@ -43,7 +45,7 @@ public:
 
     void printHistogram() {
         for (char c = 'a'; c <= 'z'; c++) {
-            drawBar(c);
+            _drawBar(c);
         }
     }
 
@@ -64,7 +66,7 @@ private:
     int alphabetCount = 0;
     std::unordered_map<char, int> histogram;
 
-    void drawBar(char c) {
+    void _drawBar(const char c) {
         std::cout << c << " (" << histogram[c] << ")\t: ";
         for (std::size_t i = 0; i < histogram[c]; i++) {
             std::cout << "*";
