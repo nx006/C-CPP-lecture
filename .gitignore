@@ -33,3 +33,9 @@
 
 # Other files
 *.DS_Store
+
+# main
+main
+
+# vscode settings
+.vscode
