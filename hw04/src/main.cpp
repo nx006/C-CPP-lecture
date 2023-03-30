@@ -28,7 +28,9 @@ private:
 
 void Sample::read()
 {
-    std::cout << "다섯 개의 정수를 입력하시오 ";
+    std::cout << "입력할려는 정수의 갯수는 ? ";
+    std::cin >> size;
+    std::cout << size << "개의 정수를 입력하시오 ";
     for (auto idx = 0; idx < size; idx++)
     {
         std::cin >> p[idx];
@@ -37,17 +39,17 @@ void Sample::read()
 
 void Sample::write() const
 {
-    std::cout << "동적배열 정수 " << size << "개를 출력합니다. ";
     for (auto idx = 0; idx < size; idx++)
     {
         std::cout << p[idx] << ' ';
     }
+    std::cout << '\n';
 }
 
 int Sample::big()
 {
     auto firstIterator = p;
-    auto lastIterator = p + size;
+    const auto lastIterator = p + size;
     if (firstIterator != lastIterator)
     {
         auto currentIterator = firstIterator;
