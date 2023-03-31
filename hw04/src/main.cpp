@@ -43,7 +43,7 @@ void Sample::write() const
     {
         std::cout << p[idx] << ' ';
     }
-    std::cout << '\n';
+    std::cout << std::endl;
 }
 
 int Sample::big()
