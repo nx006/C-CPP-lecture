@@ -202,7 +202,7 @@ void deleteMember(MEMBER* head)
 		printf("Data for Name ��%s�� is not exist\n", targetName);
 	}
 	else {
-		deleteTargetMember(head, targetMember);
+		deleteTargetMember(targetMember);
 	}
 }
 
