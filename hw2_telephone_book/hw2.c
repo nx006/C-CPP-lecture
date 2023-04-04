@@ -35,7 +35,7 @@ void selectMenu(MEMBER*, int);
 int getMenuSelection();
 void initializeHead(MEMBER* head);
 void printAllData(MEMBER*);
-void printMember(MEMBER*);
+void printMember(const MEMBER*);
 void insert(MEMBER*);
 void appendMember(MEMBER* list, const char* name, const char* telephoneNumber, const char* emailAddress, int order);
 MEMBER* findMember(MEMBER* list, const char* name);

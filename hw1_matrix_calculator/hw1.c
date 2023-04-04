@@ -35,7 +35,7 @@ void fillMatrixWithZero(int** matrix, int);
 void fillMatrixWithRandom(int** matrix, int);
 void deleteMatrix(void** matrix, int);
 void transpose(int** [], int);
-void rotation(int** [], int);
+void rotation(const int** [], int);
 int getDegree();
 void rotate90(int**, int);
 void inverse(int** [], int);
