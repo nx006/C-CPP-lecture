@@ -29,9 +29,22 @@ private:
 void Sample::read()
 {
     std::cout << "입력할려는 정수의 갯수는 ? ";
-    std::cin >> size;
-    std::cout << size << "개의 정수를 입력하시오 ";
-    for (auto idx = 0; idx < size; idx++)
+    auto inputSize = 0;
+    std::cin >> inputSize;
+
+    // reallocate memory
+    // for optimization, capacity is double of inputSize
+    if (inputSize > capacity) {
+        capacity = 2 * inputSize;
+        int *temp = new int[capacity];
+        std::copy(p, p + this->size, temp);
+
+        delete[] p;
+        p = temp;
+    }
+    size = inputSize;
+    std::cout << inputSize << "개의 정수를 입력하시오 ";
+    for (auto idx = 0; idx < inputSize; idx++)
     {
         std::cin >> p[idx];
     }
@@ -48,6 +61,10 @@ void Sample::write() const
 
 int Sample::big()
 {
+    if (size == 0)
+    {
+        throw std::runtime_error("size is 0");
+    }
     auto firstIterator = p;
     const auto lastIterator = p + size;
     if (firstIterator != lastIterator)
