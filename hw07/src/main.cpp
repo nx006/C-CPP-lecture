@@ -3,19 +3,19 @@
 class Complex
 {
   private:
-    double real;
-    double imaginary;
+    double re;
+    double im;
 
   public:
-    Complex(double _real) : real(_real), imaginary(0)
+    Complex(double _real) : re(_real), im(0)
     {
     }
-    Complex(double _real = 0, double _imaginary = 0) : real(_real), imaginary(_imaginary)
+    Complex(double _real = 0, double _imaginary = 0) : re(_real), im(_imaginary)
     {
     }
     void Output()
     {
-        std::cout << real << " + " << imaginary << "i" << std::endl;
+        std::cout << re << " + " << im << "i" << std::endl;
     }
 
     Complex &operator+=(const Complex &);
@@ -28,15 +28,15 @@ class Complex
 
 Complex &Complex::operator+=(const Complex &rhs)
 {
-    real += rhs.real;
-    imaginary += rhs.imaginary;
+    re += rhs.re;
+    im += rhs.im;
     return *this;
 }
 
 Complex &Complex::operator-()
 {
-    real = -real;
-    imaginary = -imaginary;
+    re = -re;
+    im = -im;
     return *this;
 }
 
@@ -49,22 +49,22 @@ Complex operator+(const Complex &lhs, const Complex &rhs)
 
 Complex operator++(Complex &rhs)
 {
-    rhs.real++;
-    rhs.imaginary++;
+    rhs.re++;
+    rhs.im++;
     return rhs;
 }
 
 Complex operator++(Complex &rhs, int)
 {
     Complex temp(rhs);
-    rhs.real++;
-    rhs.imaginary++;
+    rhs.re++;
+    rhs.im++;
     return temp;
 }
 
 std::ostream &operator<<(std::ostream &os, const Complex &rhs)
 {
-    os << "(" << rhs.real << " + " << rhs.imaginary << "i"
+    os << "(" << rhs.re << " + " << rhs.im << "i"
        << ")" << std::endl;
     return os;
 }
