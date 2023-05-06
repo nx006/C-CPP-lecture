@@ -2,14 +2,21 @@
 
 class Complex
 {
-private:
+  private:
     double real;
     double imaginary;
 
-public:
-    Complex(double _real) : real(_real), imaginary(0) {}
-    Complex(double _real = 0, double _imaginary = 0) : real(_real), imaginary(_imaginary) {}
-    void Output() { std::cout << real << " + " << imaginary << "i" << std::endl; }
+  public:
+    Complex(double _real) : real(_real), imaginary(0)
+    {
+    }
+    Complex(double _real = 0, double _imaginary = 0) : real(_real), imaginary(_imaginary)
+    {
+    }
+    void Output()
+    {
+        std::cout << real << " + " << imaginary << "i" << std::endl;
+    }
 
     Complex &operator+=(const Complex &);
     Complex &operator-();
