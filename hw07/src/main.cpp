@@ -1,5 +1,7 @@
 #include <iostream>
 
+using std::ostream;
+
 class Complex
 {
   private:
@@ -18,15 +20,15 @@ class Complex
         std::cout << re << " + " << im << "i" << std::endl;
     }
 
-    Complex &operator+=(const Complex &);
+    Complex &operator+=(Complex);
     Complex &operator-();
-    friend Complex operator+(const Complex &, const Complex &);
+    friend Complex operator+(Complex &, Complex &);
     friend Complex operator++(Complex &);
     friend Complex operator++(Complex &, int);
-    friend std::ostream &operator<<(std::ostream &os, const Complex &);
+    friend ostream &operator<<(ostream &os, Complex &);
 };
 
-Complex &Complex::operator+=(const Complex &rhs)
+Complex &Complex::operator+=(Complex rhs)
 {
     re += rhs.re;
     im += rhs.im;
@@ -62,7 +64,7 @@ Complex operator++(Complex &rhs, int)
     return temp;
 }
 
-std::ostream &operator<<(std::ostream &os, const Complex &rhs)
+std::ostream &operator<<(std::ostream &os, Complex &rhs)
 {
     os << "(" << rhs.re << " + " << rhs.im << "i"
        << ")" << std::endl;
