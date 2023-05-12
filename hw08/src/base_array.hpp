@@ -10,7 +10,7 @@ class BaseArray
     int *mem;
 
   protected:
-    explicit BaseArray(int capacity = 100);
+    [[maybe_unused]] explicit BaseArray(int capacity = 100);
     virtual ~BaseArray();
     void put(int index, int val);
     int get(int index);

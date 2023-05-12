@@ -6,7 +6,7 @@
 #include <stdexcept>
 #include <string>
 
-BaseArray::BaseArray(int capacity)
+[[maybe_unused]] BaseArray::BaseArray(int capacity)
 {
     this->capacity = capacity;
     this->mem = new int[static_cast<unsigned long>(capacity)];
