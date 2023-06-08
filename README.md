@@ -4,7 +4,14 @@
 
 # 과제 목록
 - hw02 : getLine 함수
-- hw03 : 랜덤 클래스 작성
+- hw03 : 랜덤 클래스
+- hw04 : 동적 메모리
+- hw05 : 숫자 맞추기 게임
+- hw07 : 연산자 중복
+- hw08 : stack 구현
+- hw09 : overloading
+- hw10 : template
+- hw11 : STL 사용하기
 
 # Folder Structure
 ```
